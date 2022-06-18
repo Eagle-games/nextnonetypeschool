@@ -51,9 +51,8 @@ function init() {
     });
 
     document.getElementById("WebGL-output").appendChild(renderera.domElement);
-}
-
-
+    
+    
 // Canvas
 const canvas = document.querySelector("#WebGL-output");
 
@@ -211,3 +210,6 @@ window.addEventListener("resize", () => {
 });
 
 window.scrollTo({ top: 0, behavior: "smooth" });
+
+
+}
