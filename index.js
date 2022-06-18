@@ -79,8 +79,8 @@ scene.add(camerab);
 const rendererb = new THREE.WebGLRenderer({
   canvas: canvas,
 });
-renderer.setSize(sizes.width, sizes.height);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+rendererb.setSize(sizes.width, sizes.height);
+rendererb.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 //オブジェクトの追加
 const geometry = new THREE.BoxGeometry(5, 5, 5, 10);
