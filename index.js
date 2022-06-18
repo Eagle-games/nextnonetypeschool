@@ -12,10 +12,10 @@ animate();
 
 function init() {
     //シーンの作成
-    scene = new THREE.Scene();
+    let scene = new THREE.Scene();
 
     //カメラの作成
-    cameraa = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    let cameraa = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     //カメラセット
     cameraa.position.set(-20, 30, 50);
     cameraa.lookAt(new THREE.Vector3(0, 10, 0));
@@ -26,7 +26,7 @@ function init() {
     scene.add(dirLight);
 
     //レンダラー
-    renderera = new THREE.WebGLRenderer({ 
+    let renderera = new THREE.WebGLRenderer({ 
         alpha: true,
         antialias: true
     });
