@@ -15,6 +15,12 @@ function init() {
     //シーンの作成
     scene = new THREE.Scene();
 
+    //カメラの作成
+    cameraa = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    //カメラセット
+    cameraa.position.set(-20, 30, 50);
+    cameraa.lookAt(new THREE.Vector3(0, 10, 0));
+    
     //光源
     const dirLight = new THREE.SpotLight(0xffffff,1.5);//color,強度
     dirLight.position.set(-20, 30, 30);
@@ -149,16 +155,10 @@ animationScripts.push({
 animationScripts.push({
   start: 80,
   end: 101,
-  function() {
-    camera.lookAt(box.position);
-    box.rotation.x += 0.02;
-    box.rotation.y += 0.02;
-  },
-    
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 function animate() {
     requestAnimationFrame(animate);
-    renderer.render(scene, camera);
+    renderer.render(scene, cameraa);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 });
