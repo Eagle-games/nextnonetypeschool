@@ -68,13 +68,13 @@ const gridHelper = new THREE.GridHelper(30, 30);
 scene.add(gridHelper);
 
 // Camera
-const camera = new THREE.PerspectiveCamera(
+const camerab = new THREE.PerspectiveCamera(
   75,
   sizes.width / sizes.height,
   0.1,
   100
 );
-camera.position.z = 6;
+camerab.position.z = 6;
 scene.add(camera);
 
 // Renderer
@@ -125,8 +125,8 @@ animationScripts.push({
   start: 0,
   end: 40,
   function() {
-    camera.lookAt(box.position);
-    camera.position.set(0, 1 ,10);
+    camerab.lookAt(box.position);
+    camerab.position.set(0, 1 ,10);
     box.position.z = lerp(-15, 2, scaleParcent(0, 40));
   },
 });
@@ -135,8 +135,8 @@ animationScripts.push({
   start: 40,
   end: 60,
   function() {
-    camera.lookAt(box.position);
-    camera.position.set(0, 1 ,10);
+    camerab.lookAt(box.position);
+    camerab.position.set(0, 1 ,10);
     box.rotation.z = lerp(2, Math.PI, scaleParcent(40, 60));
   },
 });
@@ -145,10 +145,10 @@ animationScripts.push({
   start: 60,
   end: 80,
   function() {
-    camera.lookAt(box.position);
-    camera.position.x = lerp(0, 10, scaleParcent(60, 80));
-    camera.position.y = lerp(1, 12, scaleParcent(60, 80));
-    camera.position.z = lerp(10, 20, scaleParcent(60, 80));
+    camerab.lookAt(box.position);
+    camerab.position.x = lerp(0, 10, scaleParcent(60, 80));
+    camerab.position.y = lerp(1, 12, scaleParcent(60, 80));
+    camerab.position.z = lerp(10, 20, scaleParcent(60, 80));
   },
 });
 
@@ -193,7 +193,7 @@ const tick = () => {
     * スクロールアニメーション開始
     */
   playScollAnimation();
-  renderer.render(scene, camera);
+  renderer.render(scene, camerab);
 };
 
 tick();
@@ -203,8 +203,8 @@ window.addEventListener("resize", () => {
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
 
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix();
+  camerab.aspect = sizes.width / sizes.height;
+  camerab.updateProjectionMatrix();
 
   renderer.setSize(sizes.width, sizes.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
