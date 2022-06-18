@@ -27,12 +27,12 @@ function init() {
     scene.add(dirLight);
 
     //レンダラー
-    renderer = new THREE.WebGLRenderer({ 
+    renderera = new THREE.WebGLRenderer({ 
         alpha: true,
         antialias: true
     });
-    renderer.setClearColor(new THREE.Color(0xffffff));
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderera.setClearColor(new THREE.Color(0xffffff));
+    renderera.setSize(window.innerWidth, window.innerHeight);
 
     //glbファイルの読み込み
     const loader = new GLTFLoader();
@@ -50,7 +50,7 @@ function init() {
         console.error(e);
     });
 
-    document.getElementById("WebGL-output").appendChild(renderer.domElement);
+    document.getElementById("WebGL-output").appendChild(renderera.domElement);
 }
 
 
@@ -78,7 +78,7 @@ camerab.position.z = 6;
 scene.add(camera);
 
 // Renderer
-const renderer = new THREE.WebGLRenderer({
+const rendererb = new THREE.WebGLRenderer({
   canvas: canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
@@ -193,7 +193,7 @@ const tick = () => {
     * スクロールアニメーション開始
     */
   playScollAnimation();
-  renderer.render(scene, camerab);
+  rendererb.render(scene, camerab);
 };
 
 tick();
@@ -206,8 +206,8 @@ window.addEventListener("resize", () => {
   camerab.aspect = sizes.width / sizes.height;
   camerab.updateProjectionMatrix();
 
-  renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  rendererb.setSize(sizes.width, sizes.height);
+  rendererb.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
 window.scrollTo({ top: 0, behavior: "smooth" });
