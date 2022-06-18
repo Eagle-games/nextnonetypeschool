@@ -27,6 +27,7 @@ function init() {
 
     //レンダラー
     let renderera = new THREE.WebGLRenderer({ 
+        canvas: canvas,
         alpha: true,
         antialias: true
     });
@@ -53,7 +54,7 @@ function init() {
     
     
 // Canvas
-const canvas = document.querySelector("#WebGL-output");
+    const canvas = document.querySelector("#WebGL-output");
 
 // Sizes
 const sizes = {
