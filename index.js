@@ -155,7 +155,7 @@ animationScripts.push({
   start: 80,
   end: 101,
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-  function animate(animate) {
+  function (animate) {
     requestAnimationFrame(animate);
     renderer.render(scene, cameraa);
 }
