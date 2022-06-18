@@ -7,7 +7,6 @@ let scene;
 let renderer;
 let model;
 
-init();
 animate();
 
 function init() {
@@ -27,7 +26,6 @@ function init() {
     
     //レンダラー
     let renderera = new THREE.WebGLRenderer({ 
-        canvas: canvas,
         alpha: true,
         antialias: true
     });
@@ -52,9 +50,10 @@ function init() {
 
     document.getElementById("WebGL-output").appendChild(renderera.domElement);
     
+    
 // Canvas
     const canvas = document.querySelector("#WebGL-output");
-
+    
 // Sizes
 const sizes = {
   width: window.innerWidth,
