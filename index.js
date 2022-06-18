@@ -15,17 +15,6 @@ function init() {
     //シーンの作成
     scene = new THREE.Scene();
 
-    //カメラの作成
-    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-    //カメラセット
-    camera.position.set(-20, 30, 50);
-    camera.lookAt(new THREE.Vector3(0, 10, 0));
-    
-        // 滑らかにカメラコントローラーを制御する
-    const controls = new OrbitControls(camera, document.body);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.2;
-
     //光源
     const dirLight = new THREE.SpotLight(0xffffff,1.5);//color,強度
     dirLight.position.set(-20, 30, 30);
