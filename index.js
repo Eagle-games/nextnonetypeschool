@@ -74,7 +74,7 @@ const camerab = new THREE.PerspectiveCamera(
   100
 );
 camerab.position.z = 6;
-scene.add(camera);
+scene.add(camerab);
 
 // Renderer
 const rendererb = new THREE.WebGLRenderer({
@@ -155,8 +155,8 @@ animationScripts.push({
   start: 80,
   end: 101,
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-function animate() {
-    requestAnimationFrame(animate);,
+  function animate() {
+    requestAnimationFrame(animate);
     renderer.render(scene, cameraa);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
