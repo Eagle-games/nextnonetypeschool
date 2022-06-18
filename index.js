@@ -25,10 +25,6 @@ function init() {
     dirLight.position.set(-20, 30, 30);
     scene.add(dirLight);
     
-    
-// Canvas
-    const canvas = document.querySelector("#WebGL-output");
-    
     //レンダラー
     let renderera = new THREE.WebGLRenderer({ 
         canvas: canvas,
@@ -56,6 +52,8 @@ function init() {
 
     document.getElementById("WebGL-output").appendChild(renderera.domElement);
     
+// Canvas
+    const canvas = document.querySelector("#WebGL-output");
 
 // Sizes
 const sizes = {
