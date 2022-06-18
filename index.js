@@ -68,9 +68,6 @@ const sizes = {
   height: window.innerHeight,
 };
 
-// Scene
-const scene = new THREE.Scene();
-
 //GridHelperの設定
 const gridHelper = new THREE.GridHelper(30, 30);
 scene.add(gridHelper);
