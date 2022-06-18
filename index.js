@@ -24,7 +24,11 @@ function init() {
     const dirLight = new THREE.SpotLight(0xffffff,1.5);//color,強度
     dirLight.position.set(-20, 30, 30);
     scene.add(dirLight);
-
+    
+    
+// Canvas
+    const canvas = document.querySelector("#WebGL-output");
+    
     //レンダラー
     let renderera = new THREE.WebGLRenderer({ 
         canvas: canvas,
@@ -52,9 +56,6 @@ function init() {
 
     document.getElementById("WebGL-output").appendChild(renderera.domElement);
     
-    
-// Canvas
-    const canvas = document.querySelector("#WebGL-output");
 
 // Sizes
 const sizes = {
