@@ -7,8 +7,6 @@ let scene;
 let renderer;
 let model;
 
-animate();
-
 function init() {
     //シーンの作成
     let scene = new THREE.Scene();
