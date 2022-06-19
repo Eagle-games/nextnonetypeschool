@@ -142,8 +142,8 @@ animationScripts.push({
   function () {
     scene.add(model);
     camera.lookAt(model.position);
-    model.rotation.x + 0.2;
-    model.rotation.y + 0.2;
+    model.rotation.x += 0.2;
+    model.rotation.y += 0.2;
   },
 });
 /**
