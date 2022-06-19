@@ -4,6 +4,12 @@ import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders
 
 let model;
 
+//光源
+const dirLight = new THREE.SpotLight(0xffffff,1.5);//color,強度
+dirLight.position.set(-20, 30, 30);
+scene.add(dirLight);
+
+
 // Canvas
 const canvas = document.querySelector("#webgl");
 
@@ -36,6 +42,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor(new THREE.Color(0xffffff));
 
 //オブジェクトの追加
 const geometry = new THREE.BoxGeometry(5, 5, 5, 10);
