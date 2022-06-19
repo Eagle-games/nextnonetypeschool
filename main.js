@@ -64,7 +64,7 @@ scene.add(box);
         console.error(e);
     });
 
-    document.getElementById("webgl").appendChild(renderer.domElement);
+    canvas.appendChild(renderer.domElement);
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
