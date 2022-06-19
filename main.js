@@ -1,4 +1,9 @@
 import * as THREE from'https://unpkg.com/three@0.126.1/build/three.module.js';
+import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
+
+
+let model;
+animate();
 
 // Canvas
 const canvas = document.querySelector("#webgl");
@@ -41,6 +46,29 @@ const box = new THREE.Mesh(geometry, material);
 box.position.set(0, 0.5, -15);
 box.rotation.set(1, 1, 0);
 scene.add(box);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+    //glbファイルの読み込み
+    const loader = new GLTFLoader();
+
+    loader.load('https://eagle-games.github.io/nextnonetypeschool/untitled.glb', function(gltf) {
+        model = gltf.scene;
+        model.traverse((object) => { //モデルの構成要素
+            if(object.isMesh) { //その構成要素がメッシュだったら
+            object.material.trasparent = true;//透明許可
+            object.material.opacity = 0.8;//透過
+            object.material.depthTest = true;//陰影で消える部分
+            }})
+        scene.add(model);
+    }, undefined, function(e) {
+        console.error(e);
+    });
+
+    document.getElementById("webgl").appendChild(renderer.domElement);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 /**
  * 線形補間
@@ -104,10 +132,9 @@ animationScripts.push({
 animationScripts.push({
   start: 80,
   end: 101,
-  function() {
-    camera.lookAt(box.position);
-    box.rotation.x += 0.02;
-    box.rotation.y += 0.02;
+  function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
   },
 });
 /**
