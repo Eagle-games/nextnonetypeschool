@@ -67,7 +67,6 @@ scene.add(box);
             object.material.opacity = 0.8;//透過
             object.material.depthTest = true;//陰影で消える部分
             }})
-        scene.add(model);
     }, undefined, function(e) {
         console.error(e);
     });
@@ -140,6 +139,7 @@ animationScripts.push({
   start: 80,
   end: 101,
   function () {
+    scene.add(model);
     camera.lookAt(model.position);
     model.rotation.x += 0.02;
     model.rotation.y += 0.02;
