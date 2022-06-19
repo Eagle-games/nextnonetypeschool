@@ -33,7 +33,6 @@ scene.add(camera);
 // Renderer
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
-  antialias: true,
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -134,7 +133,6 @@ animationScripts.push({
   end: 101,
   function () {
     requestAnimationFrame(animate);
-    renderer.render(scene, camera);
   },
 });
 /**
