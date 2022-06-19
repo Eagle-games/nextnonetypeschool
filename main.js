@@ -121,6 +121,7 @@ animationScripts.push({
     camera.lookAt(box.position);
     camera.position.set(0, 1 ,10);
     box.rotation.z = lerp(2, Math.PI, scaleParcent(40, 60));
+    box.rotation.x += 0.2;
   },
 });
 
