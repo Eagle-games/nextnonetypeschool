@@ -9,7 +9,7 @@ const canvas = document.querySelector("#webgl");
 
 // Sizes
 const sizes = {
-  width: screen.width,
+  width: window.innerWidth,
   height: window.innerHeight,
 };
 
