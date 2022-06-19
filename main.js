@@ -132,7 +132,9 @@ animationScripts.push({
   start: 80,
   end: 101,
   function () {
-    requestAnimationFrame(animate);
+    camera.lookAt(model.position);
+    model.rotation.x += 0.02;
+    model.rotation.y += 0.02;
   },
 });
 /**
