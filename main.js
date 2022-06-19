@@ -4,12 +4,6 @@ import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders
 
 let model;
 
-//光源
-const dirLight = new THREE.SpotLight(0xffffff,1.5);//color,強度
-dirLight.position.set(-20, 30, 30);
-scene.add(dirLight);
-
-
 // Canvas
 const canvas = document.querySelector("#webgl");
 
@@ -21,6 +15,13 @@ const sizes = {
 
 // Scene
 const scene = new THREE.Scene();
+
+
+//光源
+const dirLight = new THREE.SpotLight(0xffffff,1.5);//color,強度
+dirLight.position.set(-20, 30, 30);
+scene.add(dirLight);
+
 
 //GridHelperの設定
 const gridHelper = new THREE.GridHelper(30, 30);
