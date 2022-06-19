@@ -65,7 +65,7 @@ scene.add(box);
         console.error(e);
     });
 
-    document.getElementById("webgl").appendChild(renderer.domElement);
+    document.getElementById("webgl");
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
