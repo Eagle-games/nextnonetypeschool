@@ -128,6 +128,7 @@ animationScripts.push({
   start: 60,
   end: 80,
   function() {
+    scene.remove(model);
     camera.lookAt(box.position);
     camera.position.x = lerp(0, 10, scaleParcent(60, 80));
     camera.position.y = lerp(1, 12, scaleParcent(60, 80));
