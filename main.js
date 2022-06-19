@@ -71,8 +71,8 @@ scene.add(box);
         console.error(e);
     });
 
-    loader.load('https://eagle-games.github.io/nonetypeschool/untitled.glb', function(gltf1) {
-        model1 = gltf1.scene;
+    loader.load('https://eagle-games.github.io/nonetypeschool/untitled.glb', function(gltf) {
+        model1 = gltf.scene;
         model1.traverse((object) => { //モデルの構成要素
             if(object.isMesh) { //その構成要素がメッシュだったら
             object.material.trasparent = true;//透明許可
