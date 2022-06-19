@@ -3,7 +3,6 @@ import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders
 
 
 let model;
-animate();
 
 // Canvas
 const canvas = document.querySelector("#webgl");
@@ -132,7 +131,7 @@ animationScripts.push({
 animationScripts.push({
   start: 80,
   end: 101,
-  function animate() {
+  function () {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
   },
