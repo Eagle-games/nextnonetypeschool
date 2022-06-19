@@ -71,6 +71,18 @@ scene.add(box);
         console.error(e);
     });
 
+    loader.load('https://eagle-games.github.io/nonetypeschool/untitled.glb', function(gltf1) {
+        model1 = gltf1.scene;
+        model1.traverse((object) => { //モデルの構成要素
+            if(object.isMesh) { //その構成要素がメッシュだったら
+            object.material.trasparent = true;//透明許可
+            object.material.opacity = 0.8;//透過
+            object.material.depthTest = true;//陰影で消える部分
+            }})
+    }, undefined, function(e) {
+        console.error(e);
+    });
+
     document.getElementById("webgl");
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -118,6 +130,7 @@ animationScripts.push({
   start: 40,
   end: 60,
   function() {
+    scene.remove(model1);
     camera.lookAt(box.position);
     camera.position.set(0, 1 ,10);
     box.rotation.z = lerp(2, Math.PI, scaleParcent(40, 60));
@@ -128,6 +141,8 @@ animationScripts.push({
   start: 60,
   end: 80,
   function() {
+    scene.add(model1);
+    camera.lookAt(model1.position);
     scene.remove(model);
     camera.lookAt(box.position);
     camera.position.x = lerp(0, 10, scaleParcent(60, 80));
