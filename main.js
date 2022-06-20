@@ -71,6 +71,18 @@ scene.add(box);
         console.error(e);
     });
 
+    loader.load('https://eagle-games.github.io/nonetypeschool/untitled.glb', function(gltf) {
+        model1 = gltf.scene;
+        model1.traverse((object) => { //モデルの構成要素
+            if(object.isMesh) { //その構成要素がメッシュだったら
+            object.material.trasparent = true;//透明許可
+            object.material.opacity = 0.8;//透過
+            object.material.depthTest = true;//陰影で消える部分
+            }})
+    }, undefined, function(e) {
+        console.error(e);
+    });
+
     document.getElementById("webgl");
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
